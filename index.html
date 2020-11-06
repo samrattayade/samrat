@@ -2,64 +2,14 @@
 <html lang="en">
 
 <head>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/style1.css">
+
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-.fa {
-  padding: 3px;
-  font-size: 15px;
-  width: 20px;
-  text-align: center;
-  text-decoration: none;
-  margin: 5px 5px;
-}
-
-.fa:hover {
-    opacity: 0.7;
-}
-
-.fa-facebook {
-  background: #3B5998;
-  color: white;
-}
-
-.fa-twitter {
-  background: #55ACEE;
-  color: white;
-}
 
 
-.fa-linkedin {
-  background: #007bb5;
-  color: white;
-}
-
-.fa-youtube {
-  background: #bb0000;
-  color: white;
-}
-
-.fa-instagram {
-  background: #125688;
-  color: white;
-}
-
-.fa-pinterest {
-  background: #cb2027;
-  color: white;
-}
-
-
-
-.fa-reddit {
-  background: #ff5700;
-  color: white;
-}
-
-.fa-rss {
-  background: #ff6600;
-  color: white;
-}
 </style>
 
   <meta charset="utf-8">
@@ -131,6 +81,47 @@
 
 
 
+<!-- Carosal-->
+
+<!--carousel start-->
+
+  <div id="demo" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+  
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="img/a.jpg" alt="samrat" width="1100" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="img/c.jpg" alt="sam" width="1100" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="img/b.jpg" alt="tayade" width="1100" height="500">
+    </div>
+  </div>
+  
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+<!--carousel End-->
+
+
+
+
+
+
 
   <!-- Page Content -->
   <div class="container">
@@ -152,7 +143,38 @@
 
     </header>
 
+    <!--About Us-->
+
+<section class="my-3">
+<div class="py-5">  
+  <h3 class="text-center">About Us</h3>
+</div>
+<div class="container-fluid">
+  <div class="container">
+<div class="row">
+  <div class="col-lg-6 col-md-6 col-12">
+    <img src="img/d.jpg" class="img-fluid aboutimg">
+    </div>
+    <div class="col-lg-6 col-md-6 col-12">
+      <h2 class="">Samrat Tayade</h2>
+      <p class="py-3">I am a person who is positive about every aspect of life.
+      There are many things I like to do, to see, and to experience. I like to read, 
+    I like to write; I like to think, I like to dream; I like to talk, I like to listen. </p>
+      <a href="about.html" class="btn btn-success">Learn More</a>
+    </div>
+  </div>
+</div>  
+</div>
+</section>
+
+
+
+
+
     <!-- Page Features -->
+
+
+    <div class="text-center mb-4 pb-3"><h2>Services</h2></div>
     <div class="row text-center">
 
       <div class="col-lg-3 col-md-6 mb-4">
@@ -210,8 +232,60 @@
     </div>
     <!-- /.row -->
 
+
+
+
+<section class="my-5">
+  <div class="py-5">
+    <h2 class="text-center">Gallery</h2>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-4 col-md-4 col-12">
+        <img src="img/e5.jpg" class="img-fluid pb-4">
+      </div>
+      <div class="col-lg-4 col-md-4 col-12">
+        <img src="img/e5.jpg" class="img-fluid pb-4">
+      </div>
+      <div class="col-lg-4 col-md-4 col-12">
+        <img src="img/e5.jpg" class="img-fluid pb-4">
+      </div>
+      <div class="col-lg-4 col-md-4 col-12">
+        <img src="img/e5.jpg" class="img-fluid pb-4">
+      </div>
+      <div class="col-lg-4 col-md-4 col-12">
+        <img src="img/e5.jpg" class="img-fluid pb-4">
+      </div>
+      <div class="col-lg-4 col-md-4 col-12">
+        <img src="img/e5.jpg" class="img-fluid pb-4">
+      </div>
+      <div class="col-lg-4 col-md-4 col-12">
+        <img src="img/e5.jpg" class="img-fluid pb-4">
+      </div>
+      <div class="col-lg-4 col-md-4 col-12">
+        <img src="img/e5.jpg" class="img-fluid pb-4">
+      </div>
+      <div class="col-lg-4 col-md-4 col-12">
+        <img src="img/e5.jpg" class="img-fluid pb-4">
+      </div>
+    </div>
+    
+  </div>
+
+</section>
+
+
+
+
+
+
+    
+
   </div>
   <!-- /.container -->
+
+
+
 
 
 
@@ -228,18 +302,18 @@
     <div class="row">
 
       <!-- Grid column -->
-      <div class="col-md-6 mt-md-0 mt-3">
+      <div class="col-md-6" >
 
         <!-- Content -->
-        <h5 class="text-uppercase text-white">SAMRAT TAYADE</h5>
-        <p class="text-muted text">SAMRAT TAYADE - IT Engineer / Web Developer</p>
+        <h5 class="text-uppercase text-white col-12 margin-center" >SAMRAT TAYADE</h5>
+        <p class="text-muted text margin-center">SAMRAT TAYADE - IT Engineer / Web Developer</p>
 
 
 
 
 
 <div class="container">
-<p class="text-white">Follow On Social Media</p>
+<p class="text-white margin-center">Follow On Social Media</p>
 
 <!-- Add font awesome icons -->
 <a href="https://www.facebook.com/mr.samrattayade" target="_blank" class="fa fa-facebook"></a>
@@ -330,9 +404,10 @@
   </div>
   <!-- Footer Links -->
 
- <p class="m-0 text-center text-white bg-dark">Copyright &copy; SAMRAT TAYADE 2020</p>
+ <p class="m-0 text-center text-white">Copyright &copy; SAMRAT TAYADE 2020</p>
 
 
+</footer>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
