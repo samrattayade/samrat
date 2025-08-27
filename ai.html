@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Samrat Tayade — AI/ML Portfolio</title>
+  <meta name="description" content="Portfolio of Artificial Intelligence & Machine Learning projects by Samrat Tayade" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b1020; /* deep navy */
+      --bg-soft: #12182b;
+      --card: #0f1530;
+      --txt: #e6e8ef;
+      --muted: #a6accd;
+      --brand: #7c9cff; /* soft indigo */
+      --brand-2: #6ef3ff; /* teal glow */
+      --ring: rgba(108,130,255,0.35);
+      --shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg: #f6f8ff;
+        --bg-soft: #eef2ff;
+        --card: #ffffff;
+        --txt: #0b1020;
+        --muted: #47507a;
+        --brand: #3b5bdb;
+        --brand-2: #12b886;
+        --ring: rgba(59,91,219,0.25);
+        --shadow: 0 10px 25px rgba(60,72,88,0.08);
+      }
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:radial-gradient(1200px 600px at 80% -10%, rgba(124,156,255,.25), transparent 60%), var(--bg);
+      color:var(--txt); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";}
+    a{color:inherit; text-decoration: none}
+    .container{max-width:1100px; margin:0 auto; padding:24px}
+    header{position:sticky; top:0; backdrop-filter:saturate(140%) blur(8px); background: color-mix(in oklab, var(--bg) 85%, transparent); z-index:10; border-bottom:1px solid color-mix(in oklab, var(--txt) 10%, transparent)}
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 0}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.3px}
+    .logo{width:36px;height:36px;border-radius:12px; background: linear-gradient(135deg, var(--brand), var(--brand-2)); display:grid; place-items:center; box-shadow: var(--shadow)}
+    .logo svg{filter: drop-shadow(0 4px 10px rgba(0,0,0,.2));}
+    .links{display:flex; gap:14px; flex-wrap:wrap}
+    .chip{padding:10px 14px; border-radius:999px; background: var(--bg-soft); border:1px solid color-mix(in oklab, var(--txt) 12%, transparent); font-weight:500}
+    .chip:hover{outline:2px solid var(--ring)}
+
+    .hero{display:grid; grid-template-columns: 1.2fr .8fr; gap:28px; align-items:center; padding:40px 0}
+    @media (max-width: 880px){ .hero{grid-template-columns:1fr} }
+    .headline{font-size: clamp(28px, 3.4vw, 46px); line-height:1.08; margin:0}
+    .sub{color:var(--muted); font-size: clamp(14px, 1.5vw, 18px); margin:14px 0 0}
+    .cta-row{margin-top:22px; display:flex; gap:12px; flex-wrap:wrap}
+    .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:12px; border:1px solid color-mix(in oklab, var(--txt) 12%, transparent); background: linear-gradient(180deg, color-mix(in oklab,var(--card) 80%, transparent), var(--card)); box-shadow: var(--shadow); font-weight:600}
+    .btn:hover{outline:2px solid var(--ring)}
+
+    .glass{background: linear-gradient(180deg, color-mix(in oklab,var(--bg-soft) 70%, transparent), color-mix(in oklab,var(--bg-soft) 94%, transparent)); border:1px solid color-mix(in oklab, var(--txt) 10%, transparent); border-radius:16px; padding:18px;}
+
+    .section-title{font-size: clamp(22px, 2.2vw, 28px); margin:0 0 14px}
+
+    .grid{display:grid; grid-template-columns: repeat(3, 1fr); gap:18px}
+    @media (max-width: 980px){ .grid{grid-template-columns: repeat(2, 1fr);} }
+    @media (max-width: 640px){ .grid{grid-template-columns: 1fr;} }
+
+    .card{background: var(--card); border:1px solid color-mix(in oklab, var(--txt) 12%, transparent); border-radius:18px; padding:18px; display:flex; flex-direction:column; gap:12px; position:relative; box-shadow: var(--shadow)}
+    .badge{font-size:12px; font-weight:600; color:var(--brand-2); background: color-mix(in oklab, var(--brand-2) 14%, transparent); border:1px solid color-mix(in oklab, var(--brand-2) 55%, transparent); padding:6px 10px; border-radius:999px; width:fit-content}
+    .card h3{margin:0; font-size:18px}
+    .card p{margin:0; color:var(--muted); font-size:14px}
+    .tags{display:flex; gap:8px; flex-wrap:wrap; margin-top:6px}
+    .tag{font-size:12px; border:1px dashed color-mix(in oklab, var(--txt) 18%, transparent); padding:4px 8px; border-radius:999px; color: var(--muted)}
+    .actions{margin-top:auto; display:flex; gap:10px}
+    .link{display:inline-flex; align-items:center; gap:8px; padding:10px 12px; border-radius:12px; border:1px solid color-mix(in oklab, var(--txt) 12%, transparent)}
+    .link:hover{outline:2px solid var(--ring)}
+
+    footer{border-top:1px solid color-mix(in oklab, var(--txt) 10%, transparent); margin-top:34px}
+    .foot{display:grid; grid-template-columns: 1fr auto; gap:16px; padding:20px 0; align-items:center}
+    @media (max-width: 720px){ .foot{grid-template-columns:1fr; text-align:center; justify-items:center;} }
+    .socials{display:flex; gap:10px; flex-wrap:wrap}
+    .sr-only{position:absolute; clip:rect(1px,1px,1px,1px); clip-path:inset(50%); width:1px; height:1px; overflow:hidden; white-space:nowrap}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <!-- simple brain glyph -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M7.5 4.5a3 3 0 0 1 3-3h.5a3 3 0 0 1 3 3V6h1a3 3 0 1 1 0 6h-1v.5a3 3 0 1 1-3 3V15h-1a3 3 0 1 1 0-6h1V4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span>Samrat Tayade · AI/ML</span>
+      </div>
+      <nav class="links">
+        <a class="chip" href="#projects">Projects</a>
+        <a class="chip" href="#about">About</a>
+        <a class="chip" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <h1 class="headline">Building intelligent systems that learn from data.</h1>
+        <p class="sub">Frontend Engineer → Aspiring AI/ML Engineer. I work with Python, scikit‑learn, PyTorch, and data pipelines to turn ideas into working models. Explore my projects below—each card links straight to the GitHub repo.</p>
+        <div class="cta-row">
+          <a class="btn" href="https://github.com/samrattayade" target="_blank" rel="noopener" aria-label="Open GitHub profile">
+            <!-- GitHub icon -->
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.1-.76.08-.74.08-.74 1.22.09 1.86 1.25 1.86 1.25 1.08 1.85 2.83 1.32 3.52 1.01.11-.8.42-1.32.76-1.63-2.66-.31-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.24-3.22-.12-.31-.54-1.56.12-3.25 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.69.24 2.94.12 3.25.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.61-5.47 5.92.43.37.81 1.1.81 2.22v3.3c0 .32.21.69.82.57A12 12 0 0 0 12 .5Z"/></svg>
+            View GitHub
+          </a>
+          <a class="btn" href="#projects">Browse Projects</a>
+        </div>
+      </div>
+      <div class="glass" role="img" aria-label="Tech stack and focus areas">
+        <h2 class="section-title" style="margin-top:0">Focus Areas</h2>
+        <div class="tags">
+          <span class="tag">Supervised Learning</span>
+          <span class="tag">NLP</span>
+          <span class="tag">Computer Vision</span>
+          <span class="tag">Time Series</span>
+          <span class="tag">MLOps Basics</span>
+          <span class="tag">Data Wrangling</span>
+          <span class="tag">PyTorch</span>
+          <span class="tag">scikit‑learn</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title" class="section-title">AI/ML Projects</h2>
+      <!-- TIP: Replace href values with your actual repo links (e.g., https://github.com/samrattayade/spam-classifier) -->
+      <div class="grid">
+        <article class="card" aria-label="Spam Email Classifier project">
+          <span class="badge">NLP</span>
+          <h3>Spam Email Classifier</h3>
+          <p>Traditional ML pipeline using TF‑IDF + Logistic Regression. Includes experiment tracking and model evaluation dashboard.</p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">scikit‑learn</span><span class="tag">TF‑IDF</span><span class="tag">F1‑score</span>
+          </div>
+          <div class="actions">
+            <a class="link" href="https://github.com/samrattayade" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.1-.76.08-.74.08-.74 1.22.09 1.86 1.25 1.86 1.25 1.08 1.85 2.83 1.32 3.52 1.01.11-.8.42-1.32.76-1.63-2.66-.31-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.24-3.22-.12-.31-.54-1.56.12-3.25 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.69.24 2.94.12 3.25.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.61-5.47 5.92.43.37.81 1.1.81 2.22v3.3c0 .32.21.69.82.57A12 12 0 0 0 12 .5Z"/></svg>
+              View on GitHub
+            </a>
+          </div>
+        </article>
+
+        <article class="card" aria-label="House Price Prediction project">
+          <span class="badge">Regression</span>
+          <h3>House Price Prediction</h3>
+          <p>End‑to‑end tabular ML project with feature engineering, cross‑validation, and model stacking for improved RMSE.</p>
+          <div class="tags">
+            <span class="tag">Pandas</span><span class="tag">XGBoost</span><span class="tag">Pipelines</span><span class="tag">Cross‑val</span>
+          </div>
+          <div class="actions">
+            <a class="link" href="https://github.com/samrattayade" target="_blank" rel="noopener">View on GitHub</a>
+          </div>
+        </article>
+
+        <article class="card" aria-label="CIFAR‑10 CNN project">
+          <span class="badge">Vision</span>
+          <h3>CIFAR‑10 CNN</h3>
+          <p>Convolutional Neural Network with data augmentation and learning‑rate scheduling. Achieves competitive accuracy on CIFAR‑10.</p>
+          <div class="tags">
+            <span class="tag">PyTorch</span><span class="tag">CNN</span><span class="tag">Augmentation</span>
+          </div>
+          <div class="actions">
+            <a class="link" href="https://github.com/samrattayade" target="_blank" rel="noopener">View on GitHub</a>
+          </div>
+        </article>
+
+        <article class="card" aria-label="Sentiment Analysis project">
+          <span class="badge">NLP</span>
+          <h3>Sentiment Analysis</h3>
+          <p>Text classification using pretrained embeddings and a Bi‑LSTM baseline. Includes error analysis and confusion matrix.</p>
+          <div class="tags">
+            <span class="tag">PyTorch</span><span class="tag">LSTM</span><span class="tag">Embeddings</span>
+          </div>
+          <div class="actions">
+            <a class="link" href="https://github.com/samrattayade" target="_blank" rel="noopener">View on GitHub</a>
+          </div>
+        </article>
+
+        <article class="card" aria-label="Forecasting project">
+          <span class="badge">Time Series</span>
+          <h3>Sales Forecasting</h3>
+          <p>Classical + ML hybrid for weekly sales forecasting with feature lags, seasonality, and backtesting on rolling windows.</p>
+          <div class="tags">
+            <span class="tag">StatsModels</span><span class="tag">LightGBM</span><span class="tag">Backtesting</span>
+          </div>
+          <div class="actions">
+            <a class="link" href="https://github.com/samrattayade" target="_blank" rel="noopener">View on GitHub</a>
+          </div>
+        </article>
+
+        <article class="card" aria-label="MLOps project">
+          <span class="badge">MLOps</span>
+          <h3>Model Serving API</h3>
+          <p>Dockerized FastAPI microservice for model inference with request validation, versioned models and CI checks.</p>
+          <div class="tags">
+            <span class="tag">FastAPI</span><span class="tag">Docker</span><span class="tag">CI</span>
+          </div>
+          <div class="actions">
+            <a class="link" href="https://github.com/samrattayade" target="_blank" rel="noopener">View on GitHub</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" style="margin-top:34px">
+      <h2 class="section-title">About</h2>
+      <div class="glass">
+        <p style="margin:0; color:var(--muted); line-height:1.7">
+          I’m a Frontend Engineer transitioning into AI/ML. I enjoy building practical systems that combine clean code with strong data intuition. My strongest tech stack is Python → Java → React. I’ve contributed to enterprise web platforms (HDFC Bank · Backbase CXP) and authored a research paper. I’m currently deepening my skills in PyTorch, classical ML, and MLOps.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:34px">
+      <h2 class="section-title">Contact</h2>
+      <div class="foot glass" style="padding:18px">
+        <div>
+          <p style="margin:0; color:var(--muted)">Open to AI/ML Engineer, Data Scientist (Junior), and Python roles.</p>
+        </div>
+        <div class="socials">
+          <a class="link" href="mailto:mr.samrattayade@gmail.com"><span class="sr-only">Email</span>
+            <!-- mail icon -->
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/></svg>
+            Email
+          </a>
+          <a class="link" href="https://linkedin.com/in/samrattayade" target="_blank" rel="noopener"><span class="sr-only">LinkedIn</span>
+            <!-- linkedin icon -->
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.5 8.5h4V23h-4V8.5Zm7.5 0h3.8v2h.05c.53-1 1.86-2.05 3.82-2.05 4.08 0 4.83 2.64 4.83 6.09V23h-4v-6.5c0-1.55-.03-3.55-2.17-3.55-2.17 0-2.5 1.7-2.5 3.45V23h-4V8.5Z"/></svg>
+            LinkedIn
+          </a>
+          <a class="link" href="https://github.com/samrattayade" target="_blank" rel="noopener"><span class="sr-only">GitHub</span>
+            <!-- github icon (reuse) -->
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.1-.76.08-.74.08-.74 1.22.09 1.86 1.25 1.86 1.25 1.08 1.85 2.83 1.32 3.52 1.01.11-.8.42-1.32.76-1.63-2.66-.31-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.24-3.22-.12-.31-.54-1.56.12-3.25 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.69.24 2.94.12 3.25.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.61-5.47 5.92.43.37.81 1.1.81 2.22v3.3c0 .32.21.69.82.57A12 12 0 0 0 12 .5Z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot">
+      <small style="color:var(--muted)">© <span id="year"></span> Samrat Tayade. Built with semantic HTML & modern CSS.</small>
+      <small><a class="chip" href="#projects">Back to top ↑</a></small>
+    </div>
+  </footer>
+
+  <script>
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
